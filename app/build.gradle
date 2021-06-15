@@ -44,3 +44,4 @@ sceneform.asset('sampledata/human_male.obj',
         'default',
         'sampledata/human_male.sfa',
         'src/main/assets/human_male')
+
