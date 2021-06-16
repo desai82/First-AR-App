@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
                     scene.addChild(node);
 
                     Random random = new Random();
-                    int x = random.nextInt(10);
-                    int z = random.nextInt(10);
-                    int y = random.nextInt(20);
+                    int z = 5;
+                    int x = 0;
+                    int y = 0;
                     node.setWorldPosition(new Vector3((float) x,(float)y ,(float) z));
                 });
 

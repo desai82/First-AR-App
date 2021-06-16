@@ -45,3 +45,9 @@ sceneform.asset('sampledata/human_male.obj',
         'sampledata/human_male.sfa',
         'src/main/assets/human_male')
 
+
+
+sceneform.asset('sampledata/BodyMesh.obj',
+        'default',
+        'sampledata/BodyMesh.sfa',
+        'src/main/assets/BodyMesh')
