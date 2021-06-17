@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Scene scene;
     private Camera camera;
-
+    CustomArFragment arFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        CustomArFragment arFragment = (CustomArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
+        arFragment = (CustomArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
 
         scene = arFragment.getArSceneView().getScene();
         camera = scene.getCamera();
@@ -58,14 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 .build()
                 .thenAccept( renderable -> {
                     Node node =new Node();
-                    node.setRenderable(renderable);
+                    TransformableNode transformableNode = new TransformableNode(arFragment.getTransformationSystem());
+                    transformableNode.setParent(node);
+                    transformableNode.setRenderable(renderable);
                     scene.addChild(node);
 
                     Random random = new Random();
-                    int z = 5;
-                    int x = 0;
-                    int y = 0;
-                    node.setWorldPosition(new Vector3((float) x,(float)y ,(float) z));
+                    node.setLocalPosition(new Vector3((float)0.00,(float)-5.00,(float) -10));
                 });
 
     }
